@@ -247,7 +247,7 @@ ngx_http_cookie_flag_filter_append(ngx_http_request_t *r, ngx_http_cookie_t *coo
     len = 0;
 
     if (c.httponly) {
-        if (ngx_strcasestrn(header->value.data, "; HttpOnly", 10 - 1) == NULL) {
+        if (ngx_strcasestrn(header->value.data, "; HttpOnly", 10) == NULL) {
             len += sizeof("; HttpOnly") - 1;
         } else {
             c.httponly = 0;
@@ -255,7 +255,7 @@ ngx_http_cookie_flag_filter_append(ngx_http_request_t *r, ngx_http_cookie_t *coo
     }
 
     if (c.secure) {
-        if (ngx_strcasestrn(header->value.data, "; secure", 8 - 1) == NULL) {
+        if (ngx_strcasestrn(header->value.data, "; secure", 8) == NULL) {
             len += sizeof("; secure") - 1;
         } else {
             c.secure = 0;
@@ -263,7 +263,7 @@ ngx_http_cookie_flag_filter_append(ngx_http_request_t *r, ngx_http_cookie_t *coo
     }
 
     if (c.samesite) {
-        if (ngx_strcasestrn(header->value.data, "; SameSite", 10 - 1) == NULL) {
+        if (ngx_strcasestrn(header->value.data, "; SameSite", 10) == NULL) {
             len += sizeof("; SameSite") - 1;
         } else {
             c.samesite = 0;
@@ -271,7 +271,7 @@ ngx_http_cookie_flag_filter_append(ngx_http_request_t *r, ngx_http_cookie_t *coo
     }
 
     if (c.samesite_lax) {
-        if (ngx_strcasestrn(header->value.data, "; SameSite=Lax", 14 - 1) == NULL) {
+        if (ngx_strcasestrn(header->value.data, "; SameSite=Lax", 14) == NULL) {
             len += sizeof("; SameSite=Lax") - 1;
         } else {
             c.samesite_lax = 0;
@@ -279,7 +279,7 @@ ngx_http_cookie_flag_filter_append(ngx_http_request_t *r, ngx_http_cookie_t *coo
     }
 
     if (c.samesite_none) {
-        if (ngx_strcasestrn(header->value.data, "; SameSite=None", 15 - 1) == NULL) {
+        if (ngx_strcasestrn(header->value.data, "; SameSite=None", 15) == NULL) {
             len += sizeof("; SameSite=None") - 1;
         } else {
             c.samesite_none = 0;
@@ -287,7 +287,7 @@ ngx_http_cookie_flag_filter_append(ngx_http_request_t *r, ngx_http_cookie_t *coo
     }
 
     if (c.samesite_strict) {
-        if (ngx_strcasestrn(header->value.data, "; SameSite=Strict", 17 - 1) == NULL) {
+        if (ngx_strcasestrn(header->value.data, "; SameSite=Strict", 17) == NULL) {
             len += sizeof("; SameSite=Strict") - 1;
         } else {
             c.samesite_strict = 0;
